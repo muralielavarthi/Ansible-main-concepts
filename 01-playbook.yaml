@@ -1,0 +1,6 @@
+- name: PING
+  hosts: web # inventory - list of hosts ansible server want to connnect
+  tasks: # task=module=collection
+    - name: ping the server
+      ansible.builtin.ping:
+# Ansible is command line tool

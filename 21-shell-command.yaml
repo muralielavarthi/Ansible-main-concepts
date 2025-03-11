@@ -1,0 +1,26 @@
+- name: shell vs Command
+  hosts: local
+  connection: local
+  tasks:
+    - name: execute ls command
+      #ansible.builtin.command: ls -ltr > /tmp/output.txt
+      ansible.builtin.shell: ls -ltr > /tmp/output.txt
+
+    - name: execute ls command in command module
+      #ansible.builtin.command: ls -ltr > /tmp/output.txt
+      #ansible.builtin.command: ls -ltr
+      ansible.builtin.command: lsss -ltrssfff
+      register: command_result #using register keyword will store the output of the command.
+
+    - name: print the output
+      ansible.builtin.debug:
+        msg: "{{ command_result }}" # in the output you will have completed information
+
+
+        # Rc - exit status
+        # command execution started
+        # command execution ended
+        # stdout - output
+        # delta - time taken to run the command
+        # failed - false/true - tells success status of the command
+        # give wrong command and check output file for more understanding.

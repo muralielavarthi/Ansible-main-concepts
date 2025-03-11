@@ -1,0 +1,11 @@
+- name: variables
+  hosts: local
+  connection: local
+  tasks:
+  - name: print the variable
+    ansible.builtin.debug:
+      msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
+
+ #ansible-playbook -i inventory.ini 11-vars-args.yaml -e "COURSE='DevOps with AWS'" -e "TRAINER=Murali" -e "DURATION=120"
+# passing variables from command line
+     

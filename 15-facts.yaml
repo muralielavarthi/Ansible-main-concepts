@@ -1,0 +1,7 @@
+- name: print the facts
+  hosts: web
+  tasks:
+    - name: print the facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts }}"
+#facts.json file - the structure will be same for all distributions of Linux, only fields will change.
