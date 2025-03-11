@@ -1,5 +1,0 @@
-- name: Ping the web server
-  hosts: web # inventory - which servers you want to connect
-  tasks:
-    - name: Ping the server
-      ansible.builtin.ping:
